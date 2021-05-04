@@ -43,12 +43,18 @@ console.log("t", link)
 
 
 
-        //find the correct city
+        //find the correct city NEEDS TO BE ADDED!!!!!!!!!!
+        var lat = response.coord.lat
+        var lon = response.coord.lon
+        //https://api.openweathermap.org/data/2.5/onecall?lat={lat}&lon={lon}&exclude={part}&appid={API key}
+
+        var finalLink = "https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon=" + lon + "&exclude=minutely,hourly,alerts" + "&units=imperial" + "&appid=bfdb8d3b749b5006a535cd83f463f01f"
+
         $.ajax({
-            url: link,
+            url: finalLink,
             method: "GET",
         }).then(function (response){
-            console.log('AJAX Response \n-------------')
+            console.log('AJAX Response2 \n-------------')
             console.log(response)
 
 
@@ -56,22 +62,23 @@ console.log("t", link)
 
 
 
-        
-        var iconurl = "http://openweathermap.org/img/w/" + response.weather[0].icon + ".png"
+        //icon url
+        //var iconurl = "http://openweathermap.org/img/w/" + response.weather[0].icon + ".png"
+
         //city name and date along with current weather icon
 
-        //$("#wicon").style.display = "block"
-        $("#day").append(city.val())
-        $("#wicon").attr("src", iconurl)
+        
+        //add iconurl
+        //$("#wicon").attr("src", iconurl)
 
         //temp
-        $("#temp").append(" " + response.main.temp)
+        
 
         //wind
-        $("#wind").append(" " + response.wind.speed)
+        
 
         //humidity
-        $("#humidity").append(" " + response.main.humidity)
+        
 
         //uv index
 
