@@ -3,14 +3,6 @@ var options = "api.openweathermap.org/data/2.5/weather?q=raleigh&appid=bfdb8d3b7
 
 var city = $("#city")
 
-/*jQuery.ajaxPrefilter(function(options) {
-    if (options.crossDomain && jQuery.support.cors) {
-        options.url = 'https://cors-anywhere.herokuapp.com/' + options.url;
-    }
-});
-
-console.log("y",options)
-*/
 
 
 $("#save").click(function weather(event){
@@ -19,7 +11,8 @@ $("#save").click(function weather(event){
     console.log("L", 
     "api.openweathermap.org/data/2.5/weather?q=" + city.val() + "&appid=bfdb8d3b749b5006a535cd83f463f01f")
 
-    var link = "api.openweathermap.org/data/2.5/weather?q=" + city.val() + "&appid=bfdb8d3b749b5006a535cd83f463f01f"
+   
+   var link = "https://api.openweathermap.org/data/2.5/weather?q=" + city.val() + "&appid=bfdb8d3b749b5006a535cd83f463f01f"
 
     $.ajax({
         url: link,
