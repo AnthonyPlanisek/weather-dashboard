@@ -53,9 +53,9 @@ console.log("t", link)
         $.ajax({
             url: finalLink,
             method: "GET",
-        }).then(function (response){
+        }).then(function (response2){
             console.log('AJAX Response2 \n-------------')
-            console.log(response)
+            console.log(response2)
 
 
 
@@ -63,25 +63,24 @@ console.log("t", link)
 
 
         //icon url
-        //var iconurl = "http://openweathermap.org/img/w/" + response.weather[0].icon + ".png"
-
+        var iconurl = "http://openweathermap.org/img/w/" + response2.current.weather[0].icon + ".png"
         //city name and date along with current weather icon
-
+        $("#day").append(city.val())
         
         //add iconurl
-        //$("#wicon").attr("src", iconurl)
+        $("#wicon").attr("src", iconurl)
 
         //temp
-        
+        $("#temp").append(" " + response2.current.temp)
 
         //wind
-        
+        $("#wind").append(" " + response2.current.wind_speed)
 
         //humidity
-        
+        $("#humidity").append(" " + response2.current.humidity)
 
         //uv index
-
+        $("#uvi").append(" " + response2.current.uvi)
 
 
 
