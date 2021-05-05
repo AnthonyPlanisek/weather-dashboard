@@ -49,9 +49,40 @@ button {
 
 #fiveDay {
     position: relative;
-    width: 700px;
+    width: 1000px;
     left: 20px;
     background: gold;
     display: inline-block;
     float: left;
+}
+
+#day1 {
+    position: relative;
+    background-color: blueviolet;
+    float: left;
+    width: 200px;
+}
+
+#day2 {
+    background-color: gray;
+    float: left;
+    width: 200px;
+}
+
+#day3 {
+    background-color: hotpink;
+    float: left;
+    width: 200px;
+}
+
+#day4 {
+    background-color: springgreen;
+    float: left;
+    width: 200px;
+}
+
+#day5 {
+    background-color: wheat;
+    float: left;
+    width: 200px;
 }

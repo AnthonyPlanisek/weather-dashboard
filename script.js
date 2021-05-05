@@ -82,6 +82,10 @@ console.log("t", link)
         //uv index
         $("#uvi").append(" " + response2.current.uvi)
 
+        //five day forecast
+
+
+
 
 
         })
