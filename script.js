@@ -6,6 +6,9 @@ var city = $("#city")
 
 //icon.style.display = "none"
 
+var saved
+
+
 $("#save").click(function weather(event){
     event.preventDefault()
     console.log("I", city.val())
@@ -14,17 +17,7 @@ $("#save").click(function weather(event){
 
 //-------------------------------------storage
 
-/*
-    var storage = JSON.parse(localStorage.getItem("cityName")) || []
 
-    storage.push(city)
-
-   localStorage.setItem("cityName", JSON.stringify(storage))
-    
-   var saved = JSON.parse(localStorage.getItem("cityName"))
-
-    console.log("day", saved)
-*/
 //-----------------------------------------------storage
 
    var link = "https://api.openweathermap.org/data/2.5/weather?q=" + city.val() + "&units=imperial" + "&appid=bfdb8d3b749b5006a535cd83f463f01f"
@@ -63,31 +56,92 @@ console.log("t", link)
 
 
         //icon url
-        var iconurl = "http://openweathermap.org/img/w/" + response2.current.weather[0].icon + ".png"
+        var iconurl = "http://openweathermap.org/img/w/" + response.weather[0].icon + ".png"
+        console.log(iconurl)
         //city name and date along with current weather icon
-        $("#day").append(city.val())
+        $("#day").text(city.val())
         
         //add iconurl
+
+        console.log('ICON? ', $('#wicon'))
         $("#wicon").attr("src", iconurl)
 
         //temp
-        $("#temp").append(" " + response2.current.temp)
+        $("#temp").text("Temp: " + response2.current.temp)
 
         //wind
-        $("#wind").append(" " + response2.current.wind_speed)
+        $("#wind").text("Wind: " + response2.current.wind_speed)
 
         //humidity
-        $("#humidity").append(" " + response2.current.humidity)
+        $("#humidity").text("humidity: " + response2.current.humidity)
 
         //uv index
-        $("#uvi").append(" " + response2.current.uvi)
+        $("#uvi").text("UV Index: " + response2.current.uvi)
 
         //five day forecast
 
-
+        //iconurl
+        var iconurl1 = "http://openweathermap.org/img/w/" + response2.daily[0].weather[0].icon + ".png"
+        var iconurl2 = "http://openweathermap.org/img/w/" + response2.daily[1].weather[0].icon + ".png"
+        var iconurl3 = "http://openweathermap.org/img/w/" + response2.daily[2].weather[0].icon + ".png"
+        var iconurl4 = "http://openweathermap.org/img/w/" + response2.daily[3].weather[0].icon + ".png"
+        var iconurl5 = "http://openweathermap.org/img/w/" + response2.daily[4].weather[0].icon + ".png"
+        //display icon
+        $("#wicon1").attr("src", iconurl1)
+        $("#wicon2").attr("src", iconurl2)
+        $("#wicon3").attr("src", iconurl3)
+        $("#wicon4").attr("src", iconurl4)
+        $("#wicon5").attr("src", iconurl5)
+        //temp
+        $("#temp1").text("Temp: " + response2.daily[0].temp.day)
+        $("#temp2").text("Temp: " + response2.daily[1].temp.day)
+        $("#temp3").text("Temp: " + response2.daily[2].temp.day)
+        $("#temp4").text("Temp: " + response2.daily[3].temp.day)
+        $("#temp5").text("Temp: " + response2.daily[4].temp.day)
+        //wind speed
+        $("#wind1").text("Wind: " + response2.daily[0].wind_speed)
+        $("#wind2").text("Wind: " + response2.daily[1].wind_speed)
+        $("#wind3").text("Wind: " + response2.daily[2].wind_speed)
+        $("#wind4").text("Wind: " + response2.daily[3].wind_speed)
+        $("#wind5").text("Wind: " + response2.daily[4].wind_speed)
+        //humidity
+        $("#humidity1").text("Humidity: " + response2.daily[0].humidity)
+        $("#humidity2").text("Humidity: " + response2.daily[1].humidity)
+        $("#humidity3").text("Humidity: " + response2.daily[2].humidity)
+        $("#humidity4").text("Humidity: " + response2.daily[3].humidity)
+        $("#humidity5").text("Humidity: " + response2.daily[4].humidity)
 
 
 
         })
     })   
 })
+
+$("#save").click(function data(){
+
+    var storage = JSON.parse(localStorage.getItem('cityName')) || []
+    //storage = JSON.parse(localStorage.getItem("cityName")) || []
+
+    storage.push(city.val())
+
+
+
+   localStorage.setItem("cityName", JSON.stringify(storage))
+    
+   saved = JSON.parse(localStorage.getItem("cityName"))
+
+    console.log("day", saved)
+    console.log("day", storage)
+        })
+
+
+        function checkLocalStorage() {
+           var searches = JSON.parse(localStorage.getItem('cityName'))
+
+           console.log('searches ', searches)
+
+           // make the buttons and put them on the page
+           
+        }
+
+        checkLocalStorage()
