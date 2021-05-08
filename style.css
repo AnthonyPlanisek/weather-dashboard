@@ -1,4 +1,6 @@
-
+body {
+    padding-left: 10px;
+}
 
 
 button {
@@ -11,11 +13,11 @@ button {
     position: relative;
     padding: 0;
     margin: 0;
-    background-color: #ff00ff;
+    
 }
 
 #left {
-    background: green;
+    
     display: inline-block;
     float: left;
 
@@ -27,7 +29,7 @@ button {
     position: relative;
     width: 700px;
     left: 20px;
-    background: aquamarine;
+    padding: 5px;
     display: inline-block;
     float: left;
 }
@@ -37,11 +39,11 @@ button {
     position: relative;
     padding: 0;
     margin: 0;
-    background-color: lightblue;
+    
 }
 
 #left2 {
-    background: salmon;
+    
     display: inline-block;
     float: left;
 
@@ -49,40 +51,49 @@ button {
 
 #fiveDay {
     position: relative;
-    width: 1000px;
+    width: 1500px;
     left: 20px;
-    background: gold;
+    
     display: inline-block;
     float: left;
 }
 
 #day1 {
     position: relative;
-    background-color: blueviolet;
+    background-color: grey;
+    border: black 2px solid;
     float: left;
     width: 200px;
 }
 
 #day2 {
-    background-color: gray;
+    background-color: grey;
     float: left;
+    border: black 2px solid;
     width: 200px;
+    margin-left: 10px;
 }
 
 #day3 {
-    background-color: hotpink;
+    background-color: grey;
     float: left;
+    border: black 2px solid;
     width: 200px;
+    margin-left: 10px;
 }
 
 #day4 {
-    background-color: springgreen;
+    background-color: grey;
     float: left;
+    border: black 2px solid;
     width: 200px;
+    margin-left: 10px;
 }
 
 #day5 {
-    background-color: wheat;
+    background-color: grey;
     float: left;
+    border: black 2px solid;
     width: 200px;
+    margin-left: 10px;
 }

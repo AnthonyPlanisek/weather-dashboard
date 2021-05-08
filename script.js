@@ -1,11 +1,6 @@
 var options = "api.openweathermap.org/data/2.5/weather?q=raleigh&appid=bfdb8d3b749b5006a535cd83f463f01f"
 var current = $("#current")
-
 var city = $("#city")
-//var icon = $("#wicon")
-
-//icon.style.display = "none"
-
 var saved
 
 
@@ -15,10 +10,7 @@ $("#save").click(function weather(event){
     console.log("L", 
     "api.openweathermap.org/data/2.5/weather?q=" + city.val() + "&appid=bfdb8d3b749b5006a535cd83f463f01f")
 
-//-------------------------------------storage
 
-
-//-----------------------------------------------storage
 
    var link = "https://api.openweathermap.org/data/2.5/weather?q=" + city.val() + "&units=imperial" + "&appid=bfdb8d3b749b5006a535cd83f463f01f"
 
@@ -117,31 +109,33 @@ console.log("t", link)
     })   
 })
 
+
+/* buttons to be made from local storage
 $("#save").click(function data(){
 
     var storage = JSON.parse(localStorage.getItem('cityName')) || []
-    //storage = JSON.parse(localStorage.getItem("cityName")) || []
-
+    
     storage.push(city.val())
-
-
 
    localStorage.setItem("cityName", JSON.stringify(storage))
     
    saved = JSON.parse(localStorage.getItem("cityName"))
 
-    console.log("day", saved)
-    console.log("day", storage)
         })
-
-
+        //retrives data
         function checkLocalStorage() {
            var searches = JSON.parse(localStorage.getItem('cityName'))
-
-           console.log('searches ', searches)
-
+            var length = JSON.parse(localStorage.getItem('cityName')).length
            // make the buttons and put them on the page
-           
+           console.log("length", JSON.parse(localStorage.getItem('cityName')).length)
+
+           for (let i = 0; i < length; i++) {
+               var b = document.createElement("button")
+               document.getElementById("left3").appendChild(b) + "<br>"
+
+           }
+
         }
 
         checkLocalStorage()
+        */
